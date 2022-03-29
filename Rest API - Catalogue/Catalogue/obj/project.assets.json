@@ -193,25 +193,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hp\\.nuget\\packages\\": {},
+    "C:\\Users\\injoku\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hp\\Documents\\KeepingUpWithCSharp\\Rest API - Catalogue\\Catalogue\\Catalogue.csproj",
+      "projectUniqueName": "C:\\Users\\injoku\\Desktop\\Projects\\KeepingUpWithCSharp\\Rest API - Catalogue\\Catalogue\\Catalogue.csproj",
       "projectName": "Catalogue",
-      "projectPath": "C:\\Users\\hp\\Documents\\KeepingUpWithCSharp\\Rest API - Catalogue\\Catalogue\\Catalogue.csproj",
-      "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hp\\Documents\\KeepingUpWithCSharp\\Rest API - Catalogue\\Catalogue\\obj\\",
+      "projectPath": "C:\\Users\\injoku\\Desktop\\Projects\\KeepingUpWithCSharp\\Rest API - Catalogue\\Catalogue\\Catalogue.csproj",
+      "packagesPath": "C:\\Users\\injoku\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\injoku\\Desktop\\Projects\\KeepingUpWithCSharp\\Rest API - Catalogue\\Catalogue\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\injoku\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -254,12 +254,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.14, 5.0.14]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -268,7 +262,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
