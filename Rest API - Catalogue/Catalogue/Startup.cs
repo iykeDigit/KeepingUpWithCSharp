@@ -39,9 +39,13 @@ namespace Catalogue
                 var settings = Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
                 return new MongoClient(settings.ConnectionString);
             });
-            //services.AddSingleton<IItemsRepository, InMemItemsRepository>();
+           
             services.AddSingleton<IItemsRepository, MongoDbItemsRepository>();
-            services.AddControllers();
+
+            services.AddControllers(options =>
+            {
+                options.SuppressAsyncSuffixInActionNames = false;
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Catalogue", Version = "v1" });
