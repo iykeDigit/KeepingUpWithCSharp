@@ -6,10 +6,11 @@ ENV ASPNETCORE_URLS=http://+:80
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-focal AS build
 WORKDIR /src
-COPY ["Catalogue/Catalogue.csproj", "Catalogue/"]
+COPY ["Catalogue.csproj", "Catalogue/"]
 RUN dotnet restore "Catalogue/Catalogue.csproj"
-COPY . .
 
+WORKDIR "/src/Catalogue"
+COPY . .
 RUN dotnet publish "Catalogue.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
