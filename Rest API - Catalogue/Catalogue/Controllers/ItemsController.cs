@@ -1,4 +1,4 @@
-﻿using Catalogue.DTOs;
+﻿using Catalogue;
 using Catalogue.Entities;
 using Catalogue.Repositories;
 using Microsoft.AspNetCore.Http;
@@ -24,17 +24,28 @@ namespace Catalogue.Controllers
             _logger = logger;
         }
 
+
         //GET / items
         [HttpGet]
-        public async Task<IEnumerable<ItemDto>> GetItemsAsync()
+        public async Task<IEnumerable<ItemDto>> GetItemsAsync(string name = null)
         {
             var items = (await _repository.GetItemsAsync())
                                   .Select(item => item.AsDto());
+
+            if (!string.IsNullOrWhiteSpace(null)) 
+            {
+                items = items.Where(item => item.Name.Contains(name, StringComparison.OrdinalIgnoreCase));
+            }
 
             _logger.LogInformation($"{DateTime.UtcNow.ToString("hh:mm:ss")}: Retrieved {items.Count()} items");
 
             return items;
         }
+
+        //public Task<IEnumerable<ItemDto>> GetItemsAsync()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         // GET /items/{id}
         [HttpGet("{id}")]
@@ -57,6 +68,7 @@ namespace Catalogue.Controllers
             {
                 Id = Guid.NewGuid(),
                 Name = itemDto.Name,
+                Description = itemDto.Description,
                 Price = itemDto.Price,
                 CreatedDate = DateTimeOffset.UtcNow
             };
@@ -73,13 +85,10 @@ namespace Catalogue.Controllers
                 return NotFound();
             }
 
-            Item updatedItem = existingItem with
-            {
-                Name = itemDto.Name,
-                Price = itemDto.Price
-            };
+            existingItem.Name = itemDto.Name;
+            existingItem.Price = itemDto.Price;
 
-            await _repository.UpdateItemAsync(updatedItem);
+            await _repository.UpdateItemAsync(existingItem);
             return NoContent();
         }
 
@@ -96,5 +105,7 @@ namespace Catalogue.Controllers
             await _repository.DeleteItemAsync(id);
             return NoContent();
         }
+
+        
     }
 }
